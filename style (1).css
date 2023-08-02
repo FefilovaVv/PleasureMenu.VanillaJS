@@ -1,0 +1,47 @@
+.menu-container {
+  box-sizing: border-box;
+max-width: 400px;
+  padding: 10px;
+}
+
+.title {
+  text-align: center;
+}
+
+.receiver-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-reseiver {
+  width: 40%;
+}
+
+.score-reseiver {
+  width: 30%;
+}
+
+.submit-btn {}
+.sort-btn{
+  font-weight: 1000;
+}
+
+.points-list {
+  padding: 0;
+}
+
+.point-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: skyblue;
+  align-items: center;
+  padding: 5px;
+}
+
+.point-text {
+  width: 50%;
+}
+
+.point-score {}
+
+.point-delete {}
