@@ -1,7 +1,9 @@
 .menu-container {
   box-sizing: border-box;
-max-width: 400px;
+  max-width: 400px;
+  height: 700px;
   padding: 10px;
+  border: 3px solid skyblue;
 }
 
 .title {
@@ -21,21 +23,29 @@ max-width: 400px;
   width: 30%;
 }
 
-.submit-btn {}
-.sort-btn{
-  font-weight: 1000;
+.delete-btn {
+  font-weight: bold;
+}
+
+.sort-btn {
+  font-weight: bold;
 }
 
 .points-list {
   padding: 0;
+  overflow: hidden;
 }
 
 .point-container {
   display: flex;
+  border-radius: 10px;
   justify-content: space-between;
   background-color: skyblue;
   align-items: center;
   padding: 5px;
+  margin: 5px 0;
+  border-bottom: 1px solid gray;
+  border-right: 1px solid gray;
 }
 
 .point-text {
