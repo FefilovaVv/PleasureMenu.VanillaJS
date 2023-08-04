@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", onPageLoaded);
 
 
 function onPageLoaded() {
-  
+  getPointsFromStorage() 
   const titlesContainer =document.querySelector(".titles-container");
   const pointsList = document.querySelector(".points-list");
   const textReseiver = document.querySelector('.text-reseiver');
@@ -10,23 +10,22 @@ function onPageLoaded() {
   const addBtn = document.querySelector(".add-btn");
   const sortBtn = document.querySelector(".sort-btn");
   const allBtn = document.querySelectorAll("button","h3");
-  let targetTitle = document.querySelector('.menu-title');
-  let menuTitle = document.querySelector('.menu-title');
-  const deleteBtn = document.querySelector('.point-delete');
-    
-  
-  
-  putPointsInStorage();
-  getPointsFromStorage();
-  
-  
-  deleteBtn.addEventListener('click', deletePoint);
   const btnAddMenuTitle = document.querySelector('.btn-add-menu-title');
   btnAddMenuTitle.addEventListener('click', addMenu);
+  let targetTitle = document.querySelector('.menu-title');
+  let menuTitle = document.querySelector('h3');
+  
+  const deleteBtn = document.querySelector('.point-delete');
+   deleteBtn.addEventListener('click', deletePoint);
+    
+
+  
   scoreReseiver.addEventListener('change', showRangeResult);
   addBtn.addEventListener('click', addPoint);
   sortBtn.addEventListener('click', sortPoint);
   for (let button of allBtn) {button.addEventListener('click', putPointsInStorage)};
+  
+  putPointsInStorage();
   
   function putPointsInStorage(){
   let pointsListContent = pointsList.innerHTML;
@@ -35,7 +34,10 @@ function onPageLoaded() {
     let titlesContainerContent = titlesContainer.innerHTML;
     localStorage.setItem('titlesContainerStored', JSON.stringify(titlesContainerContent));
   
+    
    targetTitle.dataset.menuContent = pointsList.innerHTML;
+    console.log(titlesContainer.innerHTML);
+    console.log(titlesContainerContent);
   };
     
   function getPointsFromStorage() {
@@ -44,7 +46,7 @@ function onPageLoaded() {
     pointsList.innerHTML = pointsListStored;
     const titlesContainer = document.querySelector(".titles-container");
     const titlesContainerStored = JSON.parse(localStorage.getItem('titlesContainerStored'));
-    titlesContainer.innerHTML = titlesContainerStored;
+  titlesContainerStored===null? titlesContainer.innerHTML=titlesContainer.innerHTML: titlesContainer.innerHTML = titlesContainerStored;
     
     const allDeleteBtn = document.querySelectorAll('.point-delete');
     for (let button of allDeleteBtn) { button.addEventListener('click', deletePoint); };
