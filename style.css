@@ -26,7 +26,7 @@ button{
   flex-wrap: wrap;
 }
 .menu-title{display: inline-block;
-   max-width: 100px;
+   max-width: 150px;
    background-color: darkseagreen;
    padding: 3px 7px;
    margin: 0;
