@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", onPageLoaded);
 
 
 function onPageLoaded() {
-  
+  getPointsFromStorage();
   const titlesContainer =document.querySelector(".titles-container");
   const pointsList = document.querySelector(".points-list");
   const textReseiver = document.querySelector('.text-reseiver');
@@ -14,11 +14,10 @@ function onPageLoaded() {
   btnAddMenuTitle.addEventListener('click', addMenu);
   let targetTitle = document.querySelector('.menu-title');
   let menuTitle = document.querySelector('h3');
-
+  const deleteBtn = document.querySelector('.point-delete');
     
-
-  
-  scoreReseiver.addEventListener('change', showRangeResult)
+  deleteBtn.addEventListener('click', deletePoint);
+  scoreReseiver.addEventListener('change', showRangeResult);
   addBtn.addEventListener('click', addPoint);
   sortBtn.addEventListener('click', sortPoint);
   for (let button of allBtn) {button.addEventListener('click', putPointsInStorage)};
@@ -67,7 +66,9 @@ function onPageLoaded() {
     const deleteBtn = document.createElement("button");
     
     deleteBtn.classList.add("point-delete");
+    deleteBtn.setAttribute('contenteditable', 'false');
     deleteBtn.textContent = "×";
+    deleteBtn.addEventListener('click', deletePoint);
     menuTitle.append(deleteBtn);
     titlesContainer.append(menuTitle);
     allMenuTitles = document.querySelectorAll('.menu-title');
@@ -112,11 +113,6 @@ function onPageLoaded() {
   function deletePoint() {
     this.parentNode.remove();
   };
-  
-  
-  
-    
-  
   
   
 
