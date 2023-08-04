@@ -14,9 +14,14 @@ function onPageLoaded() {
   btnAddMenuTitle.addEventListener('click', addMenu);
   let targetTitle = document.querySelector('.menu-title');
   let menuTitle = document.querySelector('h3');
+  
   const deleteBtn = document.querySelector('.point-delete');
     
-  deleteBtn.addEventListener('click', deletePoint);
+   deleteBtn.addEventListener('click', deletePoint);
+
+    
+
+  
   scoreReseiver.addEventListener('change', showRangeResult);
   addBtn.addEventListener('click', addPoint);
   sortBtn.addEventListener('click', sortPoint);
