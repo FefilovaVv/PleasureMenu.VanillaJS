@@ -10,20 +10,23 @@ function onPageLoaded() {
   const addBtn = document.querySelector(".add-btn");
   const sortBtn = document.querySelector(".sort-btn");
   const allBtn = document.querySelectorAll("button","h3");
-  const btnAddMenuTitle = document.querySelector('.btn-add-menu-title');
-  btnAddMenuTitle.addEventListener('click', addMenu);
   let targetTitle = document.querySelector('.menu-title');
-  let menuTitle = document.querySelector('h3');
+  let menuTitle = document.querySelector('.menu-title');
   const deleteBtn = document.querySelector('.point-delete');
     
+  
+  
+  putPointsInStorage();
+  getPointsFromStorage();
+  
+  
   deleteBtn.addEventListener('click', deletePoint);
+  const btnAddMenuTitle = document.querySelector('.btn-add-menu-title');
+  btnAddMenuTitle.addEventListener('click', addMenu);
   scoreReseiver.addEventListener('change', showRangeResult);
   addBtn.addEventListener('click', addPoint);
   sortBtn.addEventListener('click', sortPoint);
   for (let button of allBtn) {button.addEventListener('click', putPointsInStorage)};
-  
-  putPointsInStorage();
-  getPointsFromStorage();
   
   function putPointsInStorage(){
   let pointsListContent = pointsList.innerHTML;
@@ -32,10 +35,7 @@ function onPageLoaded() {
     let titlesContainerContent = titlesContainer.innerHTML;
     localStorage.setItem('titlesContainerStored', JSON.stringify(titlesContainerContent));
   
-    
    targetTitle.dataset.menuContent = pointsList.innerHTML;
-    console.log(titlesContainer.innerHTML);
-    console.log(titlesContainerContent);
   };
     
   function getPointsFromStorage() {
