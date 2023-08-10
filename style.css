@@ -32,7 +32,7 @@ button{
    margin: 0;
   border: 1px solid gray;
 }
-.btn-add-menu-title{
+.btn-add-title-menu{
   background-color: lightseagreen;
   max-width: 100px;
    padding: 3px 7px;
@@ -85,6 +85,7 @@ button{
   overflow: auto;
 }
 
-.point-score {}
 
-.point-delete {}
+
+
+.hide{display: none;}
