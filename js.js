@@ -11,6 +11,7 @@ function onPageLoaded() {
     const sortBtn = document.querySelector(".sort-btn");
     const allBtn = document.querySelectorAll("button", "h3");
 
+    
     scoreReseiver.addEventListener('change', showRangeResult);
     sortBtn.addEventListener('click', sortPoint);
     for (let button of allBtn) { button.addEventListener('click', putPointsInStorage) };
@@ -22,13 +23,15 @@ function onPageLoaded() {
         localStorage.setItem('pointsListStored', JSON.stringify(pointsListContent));
         localStorage.setItem('titlesContainerStored', JSON.stringify(titlesContainerContent));
         targetTitle.dataset.menuContent = pointsList.innerHTML;
+        
+        console.log(targetTitle)
     };
 
     function activateMenu() {
         targetTitle = event.target;
         const pointsList = document.querySelector(".points-list");
         targetTitle.dataset.menuContent === undefined ? pointsList.innerHTML = '' : pointsList.innerHTML = targetTitle.dataset.menuContent;
-
+console.log(targetTitle)
         return targetTitle;
     };
 
@@ -78,6 +81,7 @@ function onPageLoaded() {
         deleteBtn.addEventListener('click', deletePoint);
       
         activateMenu.call(document.querySelector('.menu-title:last-child'));
+        
     };
 
 
@@ -92,6 +96,7 @@ function onPageLoaded() {
         deleteBtn.classList.add("point-delete");
 
         pointText.textContent = textReseiver.value;
+        textReseiver.value = '';
         pointScore.textContent = scoreReseiver.value;
         deleteBtn.textContent = "×";
 
@@ -110,6 +115,8 @@ function onPageLoaded() {
     function deletePoint(event) {
         this.parentNode.remove();
         event.stopPropagation();
+        const allMenuTitles = document.querySelectorAll('.menu-title');
+        console.log(allMenuTitles.length)
     };
 
     
