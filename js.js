@@ -10,9 +10,9 @@ function onPageLoaded() {
     const scoreReseiver = document.querySelector('.score-reseiver');
     const sortBtn = document.querySelector(".sort-btn");
     const allBtn = document.querySelectorAll("button", "h3");
-    
-    textReseiver.addEventListener('keydown', ()=>{
-      event.key==='Enter'?addPoint():null;
+
+    textReseiver.addEventListener('keydown', () => {
+        event.key === 'Enter' ? addPoint() : null;
     })
     scoreReseiver.addEventListener('input', showRangeResult);
     sortBtn.addEventListener('click', sortPoint);
@@ -76,37 +76,36 @@ function onPageLoaded() {
         deleteBtn.classList.add("point-delete");
         deleteBtn.setAttribute('contenteditable', 'false');
         deleteBtn.textContent = "×";
-        
+
         aTitleContainer.append(menuTitle, deleteBtn);
         titlesContainer.append(aTitleContainer);
 
         menuTitle.addEventListener('click', activateMenu);
         deleteBtn.addEventListener('click', deletePoint);
-      
+
         activateMenu.call(document.querySelector('.a-title-container:last-child .menu-title'));
 
     };
 
 
     function addPoint() {
-        const allMenuTitles = document.querySelectorAll('.menu-title');if( allMenuTitles.length>0){
-        const pointContainer = document.createElement("li");
-        pointContainer.classList.add("point-container");
-        const pointText = document.createElement("span");
-        pointText.classList.add("point-text");
-        const pointScore = document.createElement("span");
-        pointScore.classList.add("point-score");
-        const deleteBtn = document.createElement("button");
-        deleteBtn.classList.add("point-delete");
+        const allMenuTitles = document.querySelectorAll('.menu-title'); if (allMenuTitles.length > 0) {
+            const pointContainer = document.createElement("li");
+            pointContainer.classList.add("point-container");
+            const pointText = document.createElement("span");
+            pointText.classList.add("point-text");
+            const pointScore = document.createElement("span");
+            pointScore.classList.add("point-score");
+            const deleteBtn = document.createElement("button");
+            deleteBtn.classList.add("point-delete");
 
-        pointText.textContent = textReseiver.value;
-        pointScore.textContent = scoreReseiver.value;
-        deleteBtn.textContent = "×";
-        textReseiver.value ="";
-        
+            pointText.textContent = textReseiver.value;
+            pointScore.textContent = scoreReseiver.value;
+            deleteBtn.textContent = "×";
+            textReseiver.value = "";
 
-        pointsList.appendChild(pointContainer).append(pointText, pointScore, deleteBtn);
-        deleteBtn.addEventListener('click', deletePoint);
+            pointsList.appendChild(pointContainer).append(pointText, pointScore, deleteBtn);
+            deleteBtn.addEventListener('click', deletePoint);
         };
     };
 
@@ -122,7 +121,7 @@ function onPageLoaded() {
         this.parentNode.remove();
         event.stopPropagation();
         const allMenuTitles = document.querySelectorAll('.menu-title');
-        allMenuTitles.length===0?pointsList.innerHTML=`<h2 class ="tip-for-creating-menu">Сначала тыкни на +, чтобы создать меню</h2>`: null;
+        allMenuTitles.length === 0 ? pointsList.innerHTML = `<h2 class ="tip-for-creating-menu">Сначала тыкни на +, чтобы создать меню</h2>` : null;
 
     };
 };
