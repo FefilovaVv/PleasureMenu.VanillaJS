@@ -1,43 +1,108 @@
+:root{
+  --orange:#dc7c48;
+  --yellow:#fccc8c;
+  --dark-blue:#046176;
+  --light-blue:#5e939c;
+  --beige:#c4b59d;
+  --dark-green:#2b5a5c;
+  --white:white;
+}
+body{
+  margin: 0;
+}
 .menu-section{
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--dark-green);
+  width: 100vw;
+  height: 100vh;
 }
 .menu-container {
   box-sizing: border-box;
   min-width: 330px;
-  max-width: 450px;
-  padding: 10px;
-  border: 3px solid skyblue;
+  max-width: 600px;
+  padding: 20px;
+  border: 3px solid var(--light-blue);
   display: flex;
   flex-direction: column;
+  background-color: var(--dark-blue);
 }
 
-button{
+button {
   height: 20px;
   padding: 0 5px;
-}
-.title {
-  text-align: center;
+  border-color: var(--yellow);
+  font-weight: bold;
+  border-radius: 10px;
 }
 
-.titles-container{
-  display:flex;
-  flex-wrap: wrap;
+.title {
+  text-align: center;
+  color:var(--color7);
+  font-size: 2.2rem;
 }
-.menu-title{display: inline-block;
-   max-width: 150px;
-   background-color: darkseagreen;
-   padding: 3px 7px;
-   margin: 0;
-  border: 1px solid gray;
+
+.tip-container {
+  display: flex;
+flex-direction: column;
 }
-.btn-add-title-menu{
-  background-color: lightseagreen;
+
+.tip-container:hover .text-tip-what-to-do {
+  display: block;
+}
+
+.button-tip-what-to-do {
+  border: 1px solid var(--light-blue);
+  background-color: var(--yellow);
+  border-radius: 5px 5px 0px 5px;
+  padding: 2px 5px;
+  margin-left: auto;
+  font-weight: bolder;
+  color: var(--dark-green);
+}
+
+.text-tip-what-to-do {
+  display: none;
+  background-color: var(--color5);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+
+.titles-container {
+  display: flex;
+  padding: 10px 0;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.btn-add-title {
+  background-color: var(--yellow);
   max-width: 100px;
-   padding: 3px 7px;
-   margin: 0;
-  border: 1px solid gray;
+  padding: 1px 8px;
+  margin: 0;
+  border: 2px solid var(--dark-green);
+  width: 15px;
+  text-align: center;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  color: var(--dark-green);
+}
+
+.a-title-container{
+  display: flex;
+  background-color: var(--light-blue);
+  color: var(--color7);
+  padding: 3px 7px;
+  border: 1.5px solid var(--dark-green);
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.menu-title {
+  min-width: 50px;
+  max-width: 150px;
+  margin: 0;
 }
 
 .receiver-container {
@@ -50,16 +115,31 @@ button{
   width: 40%;
 }
 
+.range-result{
+  color: var(--color7);
+}
+
 .score-reseiver {
   width: 30%;
 }
 
-.delete-btn {
+.point-delete {
   font-weight: bold;
+  border-radius: 50%;
+  margin-left: 5px;
+border-color: var(--yellow);
+color: var(--orange);
+background-color: black;
 }
 
+.add-btn{
+background-color: var(--color5);  
+color: var(--dark-green);
+}
 .sort-btn {
   font-weight: bold;
+  background-color: var(--color5);
+  color: var(--dark-green);
 }
 
 .points-list {
@@ -67,25 +147,51 @@ button{
   flex: 0 0 200px;
 }
 
+.tip-for-creating-menu {
+  text-align: center;
+  color: grey;
+  padding-top: 50px;
+}
+
 .point-container {
   display: flex;
   border-radius: 10px;
   justify-content: space-between;
-  background-color: skyblue;
+  background-color: var(--color5);
   align-items: center;
   padding: 5px;
   margin: 5px 0;
-  border-bottom: 1px solid gray;
-  border-right: 1px solid gray;
+  border-bottom: 2px solid var(--dark-green);
+  border-right: 2px solid var(--dark-green);
 }
 
 .point-text {
   width: 80%;
-  max-height: 60px;
+  max-height: 150px;
   overflow: auto;
 }
 
+.point-score{
+  color: var(--dark-green);
+  font-weight: bolder;
+}
 
 
+.hide {
+  display: none;
+}
+@media (max-width:400px){
+  .menu-section{
+  align-items: flex-start;
+}
+.menu-container {
+  padding: 10px;
+}
+.title{
+  font-size: 1.4rem;
+}
 
-.hide{display: none;}
+.point-text {
+  max-height: 80px;
+}
+}
