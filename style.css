@@ -91,8 +91,8 @@ button {
   padding: 0px 6px;
   margin: 0;
   border: 2px solid var(--dark-green);
-  width: 15px;
-  height: 24px;
+  width: 17px;
+  height: 26px;
   text-align: center;
   font-size: 1.4rem;
   border-radius: 10px;
@@ -149,12 +149,20 @@ button {
 .add-btn {
   background-color: var(--orange);
   color: var(--dark-green);
+  font-size: 1rem;
+  padding: 2px;
+  height: 28px;
+  width: 45px;
 }
 
 .sort-btn {
   font-weight: bold;
   background-color: var(--orange);
   color: var(--dark-green);
+  font-size: 1rem;
+  padding: 2px;
+  height: 28px;
+  width: 45px;
 }
 
 .points-list {
@@ -203,6 +211,18 @@ button {
 
   .title {
     font-size: 1.4rem;
+  }
+
+  .add-btn {
+    font-size: 0.8rem;
+    height: 22px;
+    width: 35px;
+  }
+  
+  .sort-btn {
+    font-size: 0.8rem;   
+    height: 22px;
+    width: 25px;
   }
 
   .point-text {
