@@ -50,14 +50,22 @@ button {
   font-size: 2.2rem;
 }
 
-.tip-container .manage-tip-drop {
+.tip-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
 
+.manage-tip-drop {
+  align-self: flex-end;
+  display: inline;
+}
+
 .manage-tip-drop:hover .text-tip-what-to-do {
   display: block;
+}
+.manage-tip-drop:hover .button-tip-what-to-do {
+  display: none;
 }
 
 .button-tip-what-to-do {
@@ -67,6 +75,10 @@ button {
   padding: 2px 5px;
   font-weight: bolder;
   color: var(--dark-green);
+}
+
+.manage-tip-drop:hover {
+  cursor: pointer;
 }
 
 .text-tip-what-to-do {
@@ -99,6 +111,9 @@ button {
   color: var(--dark-green);
   align-self: center;
 }
+.btn-add-title:hover {
+  cursor: pointer;
+}
 
 .a-title-container {
   display: flex;
@@ -127,6 +142,8 @@ button {
 
 .text-reseiver {
   width: 40%;
+  border-radius: 6px;
+  border-color: var(--yellow);
 }
 
 .range-result {
@@ -135,6 +152,9 @@ button {
 
 .score-reseiver {
   width: 30%;
+}
+.score-reseiver:hover {
+  cursor: pointer;
 }
 
 .point-delete {
@@ -145,7 +165,9 @@ button {
   color: var(--orange);
   background-color: black;
 }
-
+.point-delete:hover {
+  cursor: pointer;
+}
 .add-btn {
   background-color: var(--orange);
   color: var(--dark-green);
@@ -154,7 +176,9 @@ button {
   height: 28px;
   width: 45px;
 }
-
+.add-btn:hover {
+  cursor: pointer;
+}
 .sort-btn {
   font-weight: bold;
   background-color: var(--orange);
@@ -164,7 +188,9 @@ button {
   height: 28px;
   width: 45px;
 }
-
+.sort-btn:hover {
+  cursor: pointer;
+}
 .points-list {
   padding: 0;
   flex: 0 0 200px;
@@ -218,9 +244,9 @@ button {
     height: 22px;
     width: 35px;
   }
-  
+
   .sort-btn {
-    font-size: 0.8rem;   
+    font-size: 0.8rem;
     height: 22px;
     width: 25px;
   }
